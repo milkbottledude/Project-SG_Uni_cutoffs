@@ -14,3 +14,17 @@ Fig 1:
 Fig 2:
 
 ![alt text](image-1.png)
+
+V3: Here i print out just the years and store them all in a list i defined called 'years' (Fig 3). I also removed each element as i appended them to the list, idk why it just works better for me to work with the rest of the data.
+
+Fig 3:
+
+![alt text](image-1.png)
+
+Then i created the dataframe table, starting with 'years' as the first row (Fig 4):
+
+Fig 4:
+
+![alt text](image-2.png)
+
+V4:

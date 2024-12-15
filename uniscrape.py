@@ -1,4 +1,6 @@
 import csv
+
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,3 +13,18 @@ content = soup.find_all('tbody')
 content.pop(0)
 test_w_nus = content[0]
 everythang = test_w_nus.find_all('td')
+years = []
+increment = 1
+for thang in everythang[1:]:
+    if increment == 17:
+        break
+    years.append(thang.text)
+    increment += 1
+    everythang.pop(everythang.index(thang))
+
+data = {
+    'years': years
+}
+
+df = pd.DataFrame(data)
+print(df)
