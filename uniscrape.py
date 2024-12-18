@@ -29,20 +29,26 @@ data = {
 
 df = pd.DataFrame(data)
 
-track = 1
-without_faculty = []
+taboo = ['NA', 'Merged into Engineering', 'Computing', 'Merged into Humanities & Sciences', 'New Programme AY2024/25', '']
+
 faculty_name = None
+course_name = None
 faculty_dict = {}
 for i in everythang:
-    if track == 53:
-        track = 1
-    if 'of' not in i.text:
-        without_faculty.append(i.text)
-        print(track, i.text)
-        track += 1
-        faculty_dict[faculty_name].append(i.text)
+    print(i.text)
+    if i.get('colspan') and i.text:
+        if i.text not in taboo:
+            faculty_name = i.text
+            faculty_dict[i.text] = {}
+    elif i.get('rowspan'):
+        if i.text == False:
+            for number in range(int(i.get('rowspan'))):
+                faculty_dict[faculty_name][course_name].append('padding')
+        else:
+            course_name = i.text
+            faculty_dict[faculty_name][i.text] = []
     else:
-        faculty_name = i.text
-        faculty_dict[i.text] = []
+        if i.text:
+            faculty_dict[faculty_name][course_name].append(i.text)
 
-
+print(faculty_dict['School of Business'])
