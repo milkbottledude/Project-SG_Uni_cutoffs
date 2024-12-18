@@ -64,7 +64,9 @@ link_here
 By editing my code to only print the index up to 52 and then resetting back to 1, we can see that each course has 52 relevant rows, including the row representing the course name.
 
 ## V5: 
-After scrutinising the way the data was formatted in V4, ive concluded that its kind of crap. So in this version i decided to use the attributes in the elements to be able to distinguish between which element was a faculty, course name, or score and number of course places. One trend i noticed was that most HTML elements representing faculties and schools eg: 'School of Medicine' had a 'colspan' attribute (Fig 5.1), while those that represented course names eg: 'Nursing' had a 'rowspan' attribute (Fig 5.2). As for elements that represented the other important info we want such as gpa and rp score, they did not have either of these attributes (Fig 5.3).
+After scrutinising the way the data was formatted in V4, ive concluded that its kind of crap. So in this version i decided to use the attributes in the elements to be able to distinguish between which element was a faculty, course name, or score and number of course places. I also fixed the figure numbering system, such that the first digit is the chapter in which the figure is in, while the second digit represents the figure number. For example, 'Fig 2.3' represents the 3rd figure in the 2nd chapter. Anyways, back to the code.
+
+One trend i noticed was that most HTML elements representing faculties and schools eg: 'School of Medicine' had a 'colspan' attribute (Fig 5.1), while those that represented course names eg: 'Nursing' had a 'rowspan' attribute (Fig 5.2). As for elements that represented the other important info we want such as gpa and rp score, they did not have either of these attributes (Fig 5.3).
 
 Fig 5.1:
 
@@ -86,6 +88,12 @@ Fig 5.4:
 
 link_here
 
-I apologise if Fig 5.4 seems overwhelming and has a lot of gobbledegook, you only need to pay attention to the areas circled and underlined.
+I apologise if Fig 5.4 seems overwhelming and has a lot of gobbledegook, you only need to pay attention to the areas circled and underlined. To put better into perspective how the faculty_dict would look like, i printed out the faculties and courses in a reader-friendly way below (Fig 5.5).
+
+Fig 5.5:
+
+link here
+
+The course names have a '-' in front to show that they are under the faculty and school names. I used a simple nested for-loop which i added to the end of my python code, you can see it at the top of Fig 5.5 its very straightforward.
 
 ## V6:

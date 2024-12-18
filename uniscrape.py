@@ -35,7 +35,6 @@ faculty_name = None
 course_name = None
 faculty_dict = {}
 for i in everythang:
-    print(i.text)
     if i.get('colspan') and i.text:
         if i.text not in taboo:
             faculty_name = i.text
@@ -51,4 +50,7 @@ for i in everythang:
         if i.text:
             faculty_dict[faculty_name][course_name].append(i.text)
 
-print(faculty_dict['School of Business'])
+for a in faculty_dict:
+    print(f'{a}')
+    for b in faculty_dict[a]:
+        print(f'- {b}')
